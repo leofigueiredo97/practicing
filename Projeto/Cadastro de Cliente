@@ -1,4 +1,4 @@
-rint('"-----------------------------------------------"')
+print('"-----------------------------------------------"')
 print('"              CADASTRO DE CLIENTE              "')
 print('"-----------------------------------------------"')
 
@@ -57,40 +57,39 @@ verificar = input('Deseja verificar se os dados estão corretos? S ou N: ')
 # Verifica se o usuário quer validar os dados
 
 while verificar != 'n' and verificar != 'N':
-    
-  import time
+    import time
 
-  constSec = 0.1
+    constSec = 0.1
 
-  # Verifica se a situação está correta
+    # Verifica se a situação está correta
 
-  print('Situação')
-  for i in listaSituacao:
-    def slowprint(texto, atraso=constSec):
-      for c in texto:
-        print(c, end='', flush=True)
-        time.sleep(atraso)
-  slowprint(i)
-  print('\n')
+    print('Situação')
+    for i in listaSituacao:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
 
-  situacaoCorreto = input('Os dados estão corretos? S ou N: ')
+    situacaoCorreto = input('Os dados estão corretos? S ou N: ')
 
-  while situacaoCorreto != 'S' and situacaoCorreto != 's':
-    print('Edite os dados')
+    while situacaoCorreto != 'S' and situacaoCorreto != 's':
+        print('Edite os dados')
 
-    certezaSituacao = ''
+        certezaSituacao = ''
 
-    while certezaSituacao != 'S' and certezaSituacao != 's':
-      situacao = input('Ativo ou Inativo: ')
-      print(f'O dado é {situacao}')
-      certezaSituacao = input('Tem certeza? S ou N: ')
-      if certezaSituacao == 'n' or certezaSituacao == 'N':
-        print('Edite os dados: ')
-      else:
-        print('Dados alterados com sucesso')
-    listaSituacao.append(situacao)
-    slowprint(situacao)
-    situacaoCorreto = 'S'
+        while certezaSituacao != 'S' and certezaSituacao != 's':
+            situacao = input('Ativo ou Inativo: ')
+            print(f'O dado é {situacao}')
+            certezaSituacao = input('Tem certeza? S ou N: ')
+            if certezaSituacao == 'n' or certezaSituacao == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaSituacao.append(situacao)
+        slowprint(situacao)
+        situacaoCorreto = 'S'
 
     print('\n')
     print('-------------------------------------------------')
