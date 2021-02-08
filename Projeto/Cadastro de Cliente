@@ -1,0 +1,332 @@
+rint('"-----------------------------------------------"')
+print('"              CADASTRO DE CLIENTE              "')
+print('"-----------------------------------------------"')
+
+cadastrar = ''
+listaCnpj = []
+listaSituacao = []
+listaNomeFantasia = []
+listaTelefone = []
+listaEmail = []
+listaPais = []
+listaUf = []
+listaCidade = []
+simbolosEmail = ['@', '.', '_', '-']
+
+while cadastrar != 'N' and cadastrar != 'n':
+    situacao = ''
+
+    while situacao != 'Ativo' and situacao != 'ativo' and situacao != 'Inativo' and situacao != 'inativo':
+        situacao = input('Ativo ou Inativo: ')
+    listaSituacao.append(situacao)
+
+    cnpj = input('CNPJ (apenas números): ')
+    while not cnpj.isdigit():
+        cnpj = input('CNPJ (apenas números): ')
+    listaCnpj.append(cnpj)
+
+    nomeFantasia = input('Nome Fantasia: ')
+    listaNomeFantasia.append(nomeFantasia)
+
+    telefone = input('Telefone: ')
+    while not telefone.isdigit():
+        telefone = input('Telefone: ')
+    listaTelefone.append(telefone)
+
+    email = input('E-mail: ')
+    while '@' not in email or '.' not in email:
+        email = input('Digite um e-mail válido: ')
+    listaEmail.append(email)
+
+    pais = input('País: ')
+    listaPais.append(pais)
+
+    uf = input('UF: ')
+    listaUf.append(uf)
+
+    cidade = input('Cidade: ')
+    listaCidade.append(cidade)
+
+    cadastrar = 'n'
+
+    print('__________________________________________________')
+    print('                                                  ')
+
+verificar = input('Deseja verificar se os dados estão corretos? S ou N: ')
+
+# Verifica se o usuário quer validar os dados
+
+while verificar != 'n' and verificar != 'N':
+    
+  import time
+
+  constSec = 0.1
+
+  # Verifica se a situação está correta
+
+  print('Situação')
+  for i in listaSituacao:
+    def slowprint(texto, atraso=constSec):
+      for c in texto:
+        print(c, end='', flush=True)
+        time.sleep(atraso)
+  slowprint(i)
+  print('\n')
+
+  situacaoCorreto = input('Os dados estão corretos? S ou N: ')
+
+  while situacaoCorreto != 'S' and situacaoCorreto != 's':
+    print('Edite os dados')
+
+    certezaSituacao = ''
+
+    while certezaSituacao != 'S' and certezaSituacao != 's':
+      situacao = input('Ativo ou Inativo: ')
+      print(f'O dado é {situacao}')
+      certezaSituacao = input('Tem certeza? S ou N: ')
+      if certezaSituacao == 'n' or certezaSituacao == 'N':
+        print('Edite os dados: ')
+      else:
+        print('Dados alterados com sucesso')
+    listaSituacao.append(situacao)
+    slowprint(situacao)
+    situacaoCorreto = 'S'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    # Verifica se o cnpj está correto
+
+    print('CNPJ: ')
+    for i in listaCnpj:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    cnpjCorreto = input('Os dados estão corretos? S ou N: ')
+
+    while cnpjCorreto != 'S' and cnpjCorreto != 's':
+        print('Edite os dados')
+
+        certezaCnpj = ''
+
+        while certezaCnpj != 'S' and certezaCnpj != 's':
+            cnpj = input('CNPJ: ')
+            print(f'O dado é {cnpj}')
+            certezaCnpj = input('Tem certeza? S ou N: ')
+            if certezaCnpj == 'n' or certezaCnpj == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaCnpj.append(cnpj)
+        slowprint(cnpj)
+        cnpjCorreto = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    print('Nome Fantasia:')
+    for i in listaNomeFantasia:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    fantasiaCorreto = input('Os dados estão corretos? S ou N: ')
+
+    while fantasiaCorreto != 'S' and fantasiaCorreto != 's':
+        print('Edite os dados')
+
+        certezaFantasia = ''
+
+        while certezaFantasia != 'S' and certezaFantasia != 's':
+            nomeFantasia = input('Nome fantasia: ')
+            print(f'O dado é {nomeFantasia}')
+            certezaFantasia = input('Tem certeza? S ou N: ')
+            if certezaFantasia == 'n' or certezaFantasia == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaNomeFantasia.append(nomeFantasia)
+        slowprint(nomeFantasia)
+        fantasiaCorreto = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    print('Telefone:')
+    for i in listaTelefone:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    telefoneCorreto = input('Os dados estão corretos? S ou N: ')
+
+    while telefoneCorreto != 'S' and telefoneCorreto != 's':
+        print('Edite os dados')
+
+        certezaTelefone = ''
+
+        while certezaTelefone != 'S' and certezaTelefone != 's':
+            telefone = input('Telefone: ')
+            print(f'O dado é {telefone}')
+            certezaTelefone = input('Tem certeza? S ou N: ')
+            if certezaTelefone == 'n' or certezaTelefone == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaTelefone.append(telefone)
+        slowprint(telefone)
+        telefoneCorreto = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    print('E-mail:')
+    for i in listaEmail:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    emailCorreto = input('Os dados estão corretos? S ou N: ')
+
+    while emailCorreto != 'S' and emailCorreto != 's':
+        print('Edite os dados')
+
+        certezaEmail = ''
+
+        while certezaEmail != 'S' and certezaEmail != 's':
+            email = input('E-mail: ')
+            print(f'O dado é {email}')
+            certezaEmail = input('Tem certeza? S ou N: ')
+            if certezaEmail == 'n' or certezaEmail == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaEmail.append(email)
+        slowprint(email)
+        emailCorreto = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    print('Pais:')
+    for i in listaPais:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    paisCorreto = input('Os dados estão corretos? S ou N: ')
+
+    while paisCorreto != 'S' and paisCorreto != 's':
+        print('Edite os dados')
+
+        certezaPais = ''
+
+        while certezaPais != 'S' and certezaPais != 's':
+            pais = input('País: ')
+            print(f'O dado é {pais}')
+            certezaPais = input('Tem certeza? S ou N: ')
+            if certezaPais == 'n' or certezaPais == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaPais.append(pais)
+        slowprint(pais)
+        paisCorreto = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    print('UF:')
+    for i in listaUf:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    ufCorreto = input('Os dados estão corretos? S ou N: ')
+
+    while ufCorreto != 'S' and ufCorreto != 's':
+        print('Edite os dados')
+
+        certezaUf = ''
+
+        while certezaUf != 'S' and certezaUf != 's':
+            uf = input('UF: ')
+            print(f'O dado é {uf}')
+            certezaUf = input('Tem certeza? S ou N: ')
+            if certezaUf == 'n' or certezaUf == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaUf.append(uf)
+        slowprint(uf)
+        ufCorreto = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+
+    print('Cidade:')
+    for i in listaCidade:
+        def slowprint(texto, atraso=constSec):
+            for c in texto:
+                print(c, end='', flush=True)
+                time.sleep(atraso)
+    slowprint(i)
+    print('\n')
+
+    situacaoCidade = input('Os dados estão corretos? S ou N: ')
+
+    while situacaoCidade != 'S' and situacaoCidade != 's':
+        print('Edite os dados')
+
+        certezaCidade = ''
+
+        while certezaCidade != 'S' and certezaCidade != 's':
+            cidade = input('Cidade: ')
+            print(f'O dado é {cidade}')
+            certezaCidade = input('Tem certeza? S ou N: ')
+            if certezaCidade == 'n' or certezaCidade == 'N':
+                print('Edite os dados: ')
+            else:
+                print('Dados alterados com sucesso')
+        listaCidade.append(cidade)
+        slowprint(cidade)
+        situacaoCidade = 's'
+
+    print('\n')
+    print('-------------------------------------------------')
+    print('                                                 ')
+    verificar = 'n'
+
+cadastrar = input('Deseja cadastrar? S ou N: ')
+if cadastrar == 's' or cadastrar == 'S':
+    print('Cliente cadastrado com sucesso')
+else:
+    print('Processo encerrado')
+
+cadastrar = ''

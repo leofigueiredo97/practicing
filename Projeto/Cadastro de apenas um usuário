@@ -1,0 +1,88 @@
+print('"-----------------------------------------------"')
+print('"                                               "')
+print('"              CADASTRO DE USUÁRIO              "')
+print('"                                               "')
+print('"-----------------------------------------------"')
+
+cadastro = 'S'
+password = ''
+lista = []
+cadastraUser = ''
+login = ''
+senha = ''
+
+while cadastro != 'N' and cadastro != 'n':
+  password = ''
+  user = ''
+
+  # Verifica se o usuário possui mais de 4 caracteres e menos de 15 e se o mesmo já existe.
+  while len(user) <= 4 or len(user) >= 15:
+    user = input('Digite o usuário: ')
+    while user == cadastraUser:
+      print('Usuário já existe')
+      user = input('Digite o usuário: ')
+    if len(user) <= 4:
+      print('Precisa mais de 4 caracteres')
+    elif len(user) >= 15:
+      print('Não pode haver mais que 15 caracteres')
+    else:
+      print('Usuário criado com sucesso')
+    cadastraUser = user
+
+  # Verifica se a senha contém letra maiúscula e mais de 6 caracteres
+  while password.lower() == password or len(password) <= 6:
+    password = input('Digite a senha: ')
+
+    if password.lower() == password and len(password) <= 6:
+      print('Precisa de pelo menos uma letra maiúscula e mais de 6 caracteres')
+    elif password.lower() == password and len(password) > 6:
+      print('Precisa de pelo menos uma letra maiúscula')
+    elif password.lower() != password and len(password) <= 6:
+      print('Precisa conter mais de 6 caracteres')
+    else:
+      print('Senha cadastrada com sucesso')
+  print('------------------------------------------')
+
+  choice = ''
+
+  # Verifica se o usuárop deseja cadastrar o usuário digitado
+  while choice != 'S' and choice != 's' and choice != 'n' and choice != 'N':
+    choice = input('Deseja cadastrar? S ou N: ')
+
+  if choice == 'S' or choice == 's':
+    lista.append(user)
+    print('Usuário cadastrado com sucesso.')
+  else:
+    print('Operação cancelada.')
+
+  print('------------------------------------------')
+
+  cadastro = 'n'
+
+print('Os usuários são: ')
+for i in lista:
+  print(i)
+else:
+  print('Para efetuar outro cadastro novamente, recarre a página')
+
+# Próximo passo, efetuar o Login.
+
+print('"-----------------------------------------------"')
+print('"                                               "')
+print('"                    LOGIN                      "')
+print('"                                               "')
+print('"-----------------------------------------------"')
+
+while login != user:
+  login = input('Usuário: ')
+  if login != user:
+    print('Usuário incorreto')
+  else:
+    print('Agora informe a senha')
+
+while senha != password:
+  senha = input('Senha: ')
+  if senha != password:
+    print('Senha incorreta')
+  else:
+    print('Acesso concedido')
